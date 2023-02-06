@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf99dc3d9b1f0394ea6b384496df469b, type: 3}
+  m_Name: UnityAdsSettings
+  m_EditorClassIdentifier: 
+  _androidGameID: 5147418
+  _iosGameID: 5147419
+  <Intersitial>k__BackingField:
+    <Enable>k__BackingField: 1
+    _androidID: Interstitial_Android
+    _iosID: Interstitial_iOS
+  <Rewarded>k__BackingField:
+    <Enable>k__BackingField: 1
+    _androidID: Rewarded_Android
+    _iosID: Rewarded_iOS
+  <Banner>k__BackingField:
+    <Enable>k__BackingField: 0
+    _androidID: Banner_Android
+    _iosID: Banner_iOS
+  <TestMode>k__BackingField: 1
