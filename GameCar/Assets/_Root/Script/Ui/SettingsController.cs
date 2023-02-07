@@ -7,7 +7,7 @@ namespace GameCarUI
 {
     internal sealed class SettingsController : BaseController
     {
-        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Settings");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/Settings");
         private readonly ProfilePlayer _profilePlayer;
         private readonly SettingsView _view;
 

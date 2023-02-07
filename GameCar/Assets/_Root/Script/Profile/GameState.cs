@@ -5,6 +5,7 @@ namespace GameCarProfile
         None,
         MainMenu,
         Game,
-        Settings
+        Settings,
+        Shed
     }
 }
