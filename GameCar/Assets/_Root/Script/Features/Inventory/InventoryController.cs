@@ -8,8 +8,8 @@ namespace Features.Inventory
 {
     internal class InventoryController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("");
-        private readonly ResourcePath _dataSourcePath = new ResourcePath("");
+        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Inventory/InventoryView");
+        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Inventory/ItemConfigDataSource");
 
         private readonly InventoryView _inventoryView;
         private readonly IInventoryModel _inventoryModel;

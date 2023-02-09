@@ -27,13 +27,13 @@ internal abstract class BaseController : IDisposable
 
     private void DisposeRepositories()
     {
-        if (_baseControllers == null)
+        if (_repositories == null)
             return;
 
         foreach (IRepository repository in _repositories)
             repository.Dispose();
 
-        _baseControllers.Clear();
+        _repositories.Clear();
     }
 
     private void DisposeBaseControllers()

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace GameCarTool
 {
-    internal static class ContentDataSourceLoader
+    internal class ContentDataSourceLoader
     {
         public static ItemConfig[] LoadItemConfig(ResourcePath resourcePath)
         {

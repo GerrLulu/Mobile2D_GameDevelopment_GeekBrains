@@ -19,7 +19,7 @@ namespace GameCarUI
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame, SettingsGame, PlayRewardedAds, BuyProduct);
+            _view.Init(StartGame, SettingsGame, PlayRewardedAds, BuyProduct, OpenShed);
 
             analyticsManager.SendMainMenuOpenedEvent();
         }
@@ -44,5 +44,8 @@ namespace GameCarUI
 
         private void PlayRewardedAds() =>
             ServiceRoster.AdsServices.RewardedPlayer.Play();
+
+        private void OpenShed() =>
+            _profilePlayer.CurrentState.Value = GameState.Shed;
     }
 }
