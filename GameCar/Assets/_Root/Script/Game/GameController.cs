@@ -1,15 +1,20 @@
+using Features.AbilitySystem;
 using GameCar.Car;
 using GameCar.InputLogic;
 using GameCar.TapeBackground;
 using GameCarProfile;
 using GameCarTool;
 using Services.Analytics;
+using UnityEngine;
 
 namespace GameCar
 {
     internal sealed class GameController : BaseController
     {
-        public GameController(ProfilePlayer profilePlayer, AnalyticsManager analyticsManager)
+        private readonly AbilitiesContext _abilitiesControllerContext;
+
+
+        public GameController(Transform placeForUi, ProfilePlayer profilePlayer, AnalyticsManager analyticsManager)
         {
             var leftMoveDiff = new SubscriptionProperty<float>();
             var rightMoveDiff = new SubscriptionProperty<float>();
@@ -22,6 +27,9 @@ namespace GameCar
 
             var carController = new CarController(profilePlayer.CurrentCar);
             AddController(carController);
+
+            _abilitiesControllerContext = new AbilitiesContext(placeForUi, carController);
+            AddContext(_abilitiesControllerContext);
 
 
             analyticsManager.SendStartGameEvent();

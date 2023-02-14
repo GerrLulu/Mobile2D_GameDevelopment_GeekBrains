@@ -1,4 +1,3 @@
-using JoostenProductions;
 using UnityEngine;
 
 namespace GameCar.InputLogic
@@ -7,13 +6,8 @@ namespace GameCar.InputLogic
     {
         [SerializeField] private float _input = 0.01f;
 
-        private void Start() =>
-            UpdateManager.SubscribeToUpdate(Move);
 
-        private void OnDestroy() =>
-            UpdateManager.UnsubscribeFromUpdate(Move);
-
-        private void Move()
+        protected override void Move()
         {
             float moveValue = _speed  * Time.deltaTime * _input;
 

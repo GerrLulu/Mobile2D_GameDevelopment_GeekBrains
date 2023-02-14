@@ -1,32 +1,27 @@
 ﻿using Features.Inventory.Items;
-using GameCarTool;
 using JetBrains.Annotations;
 using System;
-using UnityEngine;
 
 namespace Features.Inventory
 {
     internal class InventoryController : BaseController
     {
-        private readonly ResourcePath _viewPath = new ResourcePath("Prefabs/Inventory/InventoryView");
-        private readonly ResourcePath _dataSourcePath = new ResourcePath("Configs/Inventory/ItemConfigDataSource");
-
-        private readonly InventoryView _inventoryView;
+        private readonly IInventoryView _inventoryView;
         private readonly IInventoryModel _inventoryModel;
-        private readonly ItemsRepository _repository;
+        private readonly IItemRepository _repository;
 
 
         public InventoryController(
-            [NotNull] Transform placeForUi,
+            [NotNull] IInventoryView view,
+            [NotNull] IItemRepository repository,
             [NotNull] IInventoryModel inventoryModel)
         {
-            if (placeForUi == null)
-                throw new ArgumentNullException(nameof(placeForUi));
+            _inventoryView = view ?? throw new ArgumentNullException(nameof(view));
+
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
 
             _inventoryModel = inventoryModel ?? throw new ArgumentNullException(nameof(inventoryModel));
 
-            _repository = CreateRepository();
-            _inventoryView = LoadView(placeForUi);
 
             _inventoryView.Display(_repository.Items.Values, OnItemClicked);
 
@@ -34,23 +29,6 @@ namespace Features.Inventory
                 _inventoryView.Select(itemId);
         }
 
-        private ItemsRepository CreateRepository()
-        {
-            ItemConfig[] itemConfigs = ContentDataSourceLoader.LoadItemConfig(_dataSourcePath);
-            var repository = new ItemsRepository(itemConfigs);
-            AddRepository(repository);
-
-            return repository;
-        }
-
-        private InventoryView LoadView(Transform placeForUi)
-        {
-            GameObject prefab = ResourcesLoader.LoadPrefab(_viewPath);
-            GameObject objectView = UnityEngine.Object.Instantiate(prefab, placeForUi);
-            AddGameObject(objectView);
-
-            return objectView.GetComponent<InventoryView>();
-        }
         
         private void OnItemClicked(string itemId)
         {

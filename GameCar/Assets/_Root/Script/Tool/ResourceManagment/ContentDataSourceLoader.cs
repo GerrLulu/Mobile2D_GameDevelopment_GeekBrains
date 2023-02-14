@@ -20,7 +20,7 @@ namespace GameCarTool
             return dataSource == null ? Array.Empty<UpgradeItemConfig>() : dataSource.ItemConfigs.ToArray();
         }
 
-        public static AbilityItemConfig[] LoadAbilityItemConfigs(ResourcePath resourcePath)
+        public static AbilityItemConfig[] LoadItemConfigs(ResourcePath resourcePath)
         {
             var dataSource = ResourcesLoader.LoadObject<AbilityItemConfigDataSource>(resourcePath);
             return dataSource == null ? Array.Empty<AbilityItemConfig>() : dataSource.AbilityConfigs.ToArray();

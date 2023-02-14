@@ -1,4 +1,3 @@
-using JoostenProductions;
 using GameCarTool;
 using UnityEngine;
 
@@ -8,9 +7,7 @@ namespace GameCar.InputLogic
     {
         [SerializeField] private float _inputMultiplier = 10;
 
-        public override void Init(
-            SubscriptionProperty<float> leftMove,
-            SubscriptionProperty<float> rightMove,
+        public override void Init(SubscriptionProperty<float> leftMove, SubscriptionProperty<float> rightMove,
             float speed)
         {
             base.Init(leftMove, rightMove, speed);
@@ -18,13 +15,7 @@ namespace GameCar.InputLogic
         }
 
 
-        private void Start() =>
-            UpdateManager.SubscribeToUpdate(Move);
-
-        private void OnDestroy() =>
-            UpdateManager.UnsubscribeFromUpdate(Move);
-
-        private void Move()
+        protected override void Move()
         {
             if (!SystemInfo.supportsGyroscope)
                 return;

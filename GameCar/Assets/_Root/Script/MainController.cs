@@ -30,48 +30,37 @@ internal sealed class MainController : BaseController
 
     protected override void OnDispose()
     {
-        _mainMenuController?.Dispose();
-        _gameController?.Dispose();
-        _settingsController?.Dispose();
-        _shedController?.Dispose();
+        DisposeControllers();
 
         _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
     }
 
     private void OnChangeGameState(GameState state)
     {
+        DisposeControllers();
+
         switch (state)
         {
             case GameState.MainMenu:
                 _mainMenuController = new MainMenuController(_placeForUi, _profilePlayer, _analyticsManager);
-                _gameController?.Dispose();
-                _settingsController?.Dispose();
-                _shedController?.Dispose();
                 break;
             case GameState.Game:
-                _gameController = new GameController(_profilePlayer, _analyticsManager);
-                _mainMenuController?.Dispose();
-                _settingsController?.Dispose();
-                _shedController?.Dispose();
+                _gameController = new GameController(_placeForUi, _profilePlayer, _analyticsManager);
                 break;
             case GameState.Settings:
                 _settingsController = new SettingsController(_placeForUi, _profilePlayer);
-                _mainMenuController?.Dispose();
-                _gameController?.Dispose();
-                _shedController?.Dispose();
                 break;
             case GameState.Shed:
                 _shedController = new ShedController(_placeForUi, _profilePlayer);
-                _mainMenuController?.Dispose();
-                _gameController?.Dispose();
-                _settingsController?.Dispose();
-                break;
-            default:
-                _mainMenuController?.Dispose();
-                _gameController?.Dispose();
-                _settingsController?.Dispose();
-                _shedController?.Dispose();
                 break;
         }
+    }
+
+    private void DisposeControllers()
+    {
+        _mainMenuController?.Dispose();
+        _gameController?.Dispose();
+        _settingsController?.Dispose();
+        _shedController?.Dispose();
     }
 }

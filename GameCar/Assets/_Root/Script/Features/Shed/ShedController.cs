@@ -20,9 +20,9 @@ namespace Features.Shed
 
         private readonly ShedView _view;
         private readonly ProfilePlayer _profilePlayer;
-        private readonly InventoryController _inventoryController;
         private readonly UpgradeHandlersRepository _upgradeHandlersRepository;
 
+        private readonly InventoryContext _inventoryContext;
 
         public ShedController(
             [NotNull] Transform placeForUi,
@@ -35,12 +35,20 @@ namespace Features.Shed
                 = profilePlayer ?? throw new ArgumentNullException(nameof(profilePlayer));
 
             _upgradeHandlersRepository = CreateRepository();
-            _inventoryController = CreateInventoryController(placeForUi);
+            _inventoryContext = CreateInventoryContext(placeForUi, _profilePlayer.Inventory);
             _view = LoadView(placeForUi);
 
             _view.Init(Apply, Back);
         }
 
+
+        private InventoryContext CreateInventoryContext(Transform placeForUi, IInventoryModel inventoryModel)
+        {
+            var inventoryContext = new InventoryContext(placeForUi, inventoryModel);
+            AddContext(inventoryContext);
+
+            return inventoryContext;
+        }
 
         private UpgradeHandlersRepository CreateRepository()
         {
@@ -49,14 +57,6 @@ namespace Features.Shed
             AddRepository(repository);
 
             return repository;
-        }
-
-        private InventoryController CreateInventoryController(Transform placeForUi)
-        {
-            var inventoryController = new InventoryController(placeForUi, _profilePlayer.Inventory);
-            AddController(inventoryController);
-
-            return inventoryController;
         }
 
         private ShedView LoadView(Transform placeForUi)
