@@ -528,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e91f17ef5aed1b4eace5a4e910365ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initialProfileSettings: {fileID: 11400000, guid: cd03f0c1c90449c4bbb1a0543da31071, type: 2}
   _placeForUi: {fileID: 1113635376}
   _adsService: {fileID: 1329224359}
   _analyticsManager: {fileID: 1851344190}

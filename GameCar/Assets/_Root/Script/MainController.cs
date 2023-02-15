@@ -13,9 +13,11 @@ internal sealed class MainController : BaseController
     private MainMenuController _mainMenuController;
     private GameController _gameController;
     private SettingsController _settingsController;
-    private ShedController _shedController;
+
+    private ShedContext _shedContext;
 
     private readonly AnalyticsManager _analyticsManager;
+
 
     public MainController(Transform placeForUi, ProfilePlayer profilePlayer, AnalyticsManager analyticsManager)
     {
@@ -30,14 +32,14 @@ internal sealed class MainController : BaseController
 
     protected override void OnDispose()
     {
-        DisposeControllers();
+        DisposeChildObjects();
 
         _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
     }
 
     private void OnChangeGameState(GameState state)
     {
-        DisposeControllers();
+        DisposeChildObjects();
 
         switch (state)
         {
@@ -51,16 +53,17 @@ internal sealed class MainController : BaseController
                 _settingsController = new SettingsController(_placeForUi, _profilePlayer);
                 break;
             case GameState.Shed:
-                _shedController = new ShedController(_placeForUi, _profilePlayer);
+                _shedContext = new ShedContext(_placeForUi, _profilePlayer);
                 break;
         }
     }
 
-    private void DisposeControllers()
+    private void DisposeChildObjects()
     {
         _mainMenuController?.Dispose();
         _gameController?.Dispose();
         _settingsController?.Dispose();
-        _shedController?.Dispose();
+
+        _shedContext?.Dispose();
     }
 }
