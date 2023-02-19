@@ -18,6 +18,7 @@ namespace BattleScript
         private int _moneyPlayer;
         private int _healthPlayer;
         private int _powerPlayer;
+        private int _wantedPlayer;
 
 
         public Enemy(string name) =>
@@ -39,6 +40,10 @@ namespace BattleScript
                 case DataType.Power:
                     _powerPlayer = playerData.Value;
                     break;
+
+                case DataType.Wanted:
+                    _wantedPlayer = playerData.Value;
+                    break;
             }
 
             Debug.Log($"Notified {_name} change to {playerData.DataType:F}");
@@ -50,7 +55,10 @@ namespace BattleScript
             float moneyRatio = _moneyPlayer / KMoney;
             float powerRatio = _powerPlayer / KPower;
 
-            return (int)(moneyRatio + kHealth + powerRatio);
+            if(0 <= _wantedPlayer && _wantedPlayer <= 3)
+                return (int)(moneyRatio + kHealth + powerRatio)/2;
+            else
+                return (int)(moneyRatio + kHealth + powerRatio);
         }
 
         private int CalcKHealth() =>
