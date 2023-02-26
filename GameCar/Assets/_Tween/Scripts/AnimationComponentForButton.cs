@@ -6,7 +6,7 @@ namespace Tween
 {
     [RequireComponent(typeof(Button))]
     [RequireComponent(typeof(RectTransform))]
-    public class CustomButtonByComposition : MonoBehaviour
+    public class AnimationComponentForButton : MonoBehaviour
     {
         [Header("Components")]
         [SerializeField] private Button _button;
@@ -17,6 +17,9 @@ namespace Tween
         [SerializeField] private Ease _curveEase = Ease.Linear;
         [SerializeField] private float _duration = 0.6f;
         [SerializeField] private float _strength = 30f;
+        [SerializeField] private bool _isUpdate = true;
+
+        private Tweener _tweener;
 
 
         private void OnValidate() => InitComponents();
@@ -37,16 +40,22 @@ namespace Tween
 
         private void ActivateAnimation()
         {
+            StopAnimation();
+
             switch (_animationButtonType)
             {
                 case AnimationButtonType.ChangeRotation:
-                    _rectTransform.DOShakeRotation(_duration, Vector3.forward * _strength).SetEase(_curveEase);
+                    _tweener = _rectTransform.DOShakeRotation(_duration, Vector3.forward * _strength).SetEase(_curveEase).SetUpdate(_isUpdate);
                     break;
 
                 case AnimationButtonType.ChangePosition:
-                    _rectTransform.DOShakeAnchorPos(_duration, Vector2.one * _strength).SetEase(_curveEase);
+                    _tweener = _rectTransform.DOShakeAnchorPos(_duration, Vector2.one * _strength).SetEase(_curveEase).SetUpdate(_isUpdate);
                     break;
             }
         }
+
+        [ContextMenu(nameof(StopAnimation))]
+        private void StopAnimation() =>
+            _tweener?.Kill();
     }
 }
