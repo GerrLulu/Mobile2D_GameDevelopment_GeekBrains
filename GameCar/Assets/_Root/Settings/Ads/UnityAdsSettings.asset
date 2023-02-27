@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf99dc3d9b1f0394ea6b384496df469b, type: 3}
+  m_Script: {fileID: 11500000, guid: 89e5615edfbc38540988723ae8bb774a, type: 3}
   m_Name: UnityAdsSettings
   m_EditorClassIdentifier: 
   _androidGameID: 5147418
   _iosGameID: 5147419
   <Intersitial>k__BackingField:
     <Enable>k__BackingField: 1
-    _androidID: Interstitial_Android
-    _iosID: Interstitial_iOS
+    _androidID: 5147418
+    _iosID: 5147419
   <Rewarded>k__BackingField:
     <Enable>k__BackingField: 1
-    _androidID: Rewarded_Android
-    _iosID: Rewarded_iOS
+    _androidID: 5147418
+    _iosID: 5147419
   <Banner>k__BackingField:
-    <Enable>k__BackingField: 0
-    _androidID: Banner_Android
-    _iosID: Banner_iOS
+    <Enable>k__BackingField: 1
+    _androidID: 5147418
+    _iosID: 5147419
   <TestMode>k__BackingField: 1

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6045d0310ab4c9e4097493c7a9d9f386, type: 3}
+  m_Script: {fileID: 11500000, guid: 6118ce1540d041a4a9adc89d27299e04, type: 3}
   m_Name: Transmission
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: transimission
-  <Title>k__BackingField: Transimission
-  <Icon>k__BackingField: {fileID: 21300000, guid: 6beb83e9d73e0d74f95ccd005e5b888c, type: 3}
+  <Id>k__BackingField: transmission
+  <Title>k__BackingField: Transmission
+  <Icon>k__BackingField: {fileID: 21300000, guid: a03a39af61d16d94298132cfd5437225, type: 3}

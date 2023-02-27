@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6045d0310ab4c9e4097493c7a9d9f386, type: 3}
+  m_Script: {fileID: 11500000, guid: 6118ce1540d041a4a9adc89d27299e04, type: 3}
   m_Name: Tire
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: tier
+  <Id>k__BackingField: tire
   <Title>k__BackingField: Tire
-  <Icon>k__BackingField: {fileID: 21300000, guid: cd1d2fc6cccbf2d4d801925c0250da16, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: a0aa6196d79b5db419e9a18c8927b98a, type: 3}

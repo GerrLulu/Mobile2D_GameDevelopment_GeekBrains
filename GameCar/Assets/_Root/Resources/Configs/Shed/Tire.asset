@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44160c2051f34df2a96d862e4a59ce39, type: 3}
   m_Name: Tire
   m_EditorClassIdentifier: 
-  _itemConfig: {fileID: 11400000, guid: 8a34ba448bc2d3d4e93d39c1b446c234, type: 2}
+  _itemConfig: {fileID: 11400000, guid: 915418c4b9b4a4b569b2470084fe2046, type: 2}
   <Type>k__BackingField: 1
   <Value>k__BackingField: 3

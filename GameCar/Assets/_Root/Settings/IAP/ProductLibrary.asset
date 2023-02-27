@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dd0f91b9ac6c8446920c1c83ec5639d, type: 3}
+  m_Script: {fileID: 11500000, guid: 60d72a813d9e48b5829288680dc95b9c, type: 3}
   m_Name: ProductLibrary
   m_EditorClassIdentifier: 
   <Products>k__BackingField:
@@ -18,6 +18,6 @@ MonoBehaviour:
   - <Id>k__BackingField: product_2
     <ProductType>k__BackingField: 0
   - <Id>k__BackingField: product_3
-    <ProductType>k__BackingField: 0
+    <ProductType>k__BackingField: 1
   - <Id>k__BackingField: subscription_1
     <ProductType>k__BackingField: 2

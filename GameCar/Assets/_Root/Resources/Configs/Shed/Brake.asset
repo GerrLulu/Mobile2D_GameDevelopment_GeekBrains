@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44160c2051f34df2a96d862e4a59ce39, type: 3}
   m_Name: Brake
   m_EditorClassIdentifier: 
-  _itemConfig: {fileID: 11400000, guid: 733f4dec4bb26e94cba13aa019733c79, type: 2}
+  _itemConfig: {fileID: 11400000, guid: b597b6b04f8d34d0bb36337f81f45ec0, type: 2}
   <Type>k__BackingField: 1
   <Value>k__BackingField: 1
