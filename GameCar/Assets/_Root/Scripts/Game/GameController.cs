@@ -6,6 +6,7 @@ using Game.Car;
 using Game.InputLogic;
 using Game.TapeBackground;
 using Features.AbilitySystem;
+using Ui;
 
 namespace Game
 {
@@ -18,6 +19,7 @@ namespace Game
         private readonly InputGameController _inputGameController;
         private readonly TapeBackgroundController _tapeBackgroundController;
         private readonly AbilitiesContext _abilitiesContext;
+        private readonly BackToMenuController _gameMenuController;
 
 
         public GameController(Transform placeForUi, ProfilePlayer profilePlayer)
@@ -29,6 +31,7 @@ namespace Game
             _inputGameController = CreateInputGameController(profilePlayer, _leftMoveDiff, _rightMoveDiff);
             _tapeBackgroundController = CreateTapeBackground(_leftMoveDiff, _rightMoveDiff);
             _abilitiesContext = CreateAbilitiesContext(placeForUi, _carController);
+            _gameMenuController = CreateGameMenuController(placeForUi, profilePlayer);
 
             ServiceRoster.Analytics.SendGameStarted();
         }
@@ -65,6 +68,14 @@ namespace Game
             AddContext(context);
 
             return context;
+        }
+
+        private BackToMenuController CreateGameMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
+        {
+            var gameMenuController = new BackToMenuController(placeForUi, profilePlayer);
+            AddController(gameMenuController);
+
+            return gameMenuController;
         }
     }
 }

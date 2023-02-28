@@ -50,7 +50,7 @@ namespace Features.Shed
                 _profilePlayer.Inventory.EquippedItems,
                 _upgradeHandlersRepository.Items);
 
-            _profilePlayer.CurrentState.Value = GameState.Start;
+            _profilePlayer.CurrentState.Value = GameState.Menu;
 
             Log("Apply. " +
                 $"Current Speed: {_profilePlayer.CurrentCar.Speed}. " +
@@ -59,7 +59,7 @@ namespace Features.Shed
 
         private void Back()
         {
-            _profilePlayer.CurrentState.Value = GameState.Start;
+            _profilePlayer.CurrentState.Value = GameState.Menu;
 
             Log("Back. " +
                 $"Current Speed: {_profilePlayer.CurrentCar.Speed}. " +

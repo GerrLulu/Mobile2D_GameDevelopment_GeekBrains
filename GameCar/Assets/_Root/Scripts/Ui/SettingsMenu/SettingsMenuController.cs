@@ -30,6 +30,6 @@ namespace Ui
         }
 
         private void BackToMenu() =>
-            _profilePlayer.CurrentState.Value = GameState.Start;
+            _profilePlayer.CurrentState.Value = GameState.Menu;
     }
 }

@@ -65,7 +65,7 @@ namespace Services.Ads.UnityAds
             if (IsIdMy(placementId) == false)
                 return;
 
-            Log("Start on click");
+            Log("Menu on click");
             Started?.Invoke();
         }
 

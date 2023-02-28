@@ -43,7 +43,7 @@ internal class MainController : BaseController
 
         switch (state)
         {
-            case GameState.Start:
+            case GameState.Menu:
                 _mainMenuController = new MainMenuController(_placeForUi, _profilePlayer);
                 break;
             case GameState.Settings:

@@ -3,7 +3,7 @@ namespace Profile
     internal enum GameState
     {
         None,
-        Start,
+        Menu,
         Settings,
         Shed,
         DailyReward,

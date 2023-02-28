@@ -235,6 +235,6 @@ namespace Features.Rewards
         }
 
         private void Close() =>
-            _profilePlayer.CurrentState.Value = GameState.Start;
+            _profilePlayer.CurrentState.Value = GameState.Menu;
     }
 }
