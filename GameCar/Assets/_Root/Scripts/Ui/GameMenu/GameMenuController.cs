@@ -45,7 +45,11 @@ namespace Ui
         private void Back() =>
             _profilePlayer.CurrentState.Value = GameState.Menu;
 
-        private void Pause() => _pause.Enable();
+        private void Pause()
+        {
+            _pause.Enable();
+            Debug.Log("Push1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        }
 
 
         private PauseMenuController CreatePauseMenuController(Transform placeForUi, ProfilePlayer profilePlayer, Pause pause)

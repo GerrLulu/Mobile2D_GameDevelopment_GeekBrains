@@ -13,7 +13,7 @@ namespace Ui
         public void Init(UnityAction back, UnityAction pause)
         {
             _buttonBackToMenu.onClick.AddListener(back);
-            _buttonBackToMenu.onClick.AddListener(pause);
+            _buttonPause.onClick.AddListener(pause);
         }
 
         private void OnDestroy()
