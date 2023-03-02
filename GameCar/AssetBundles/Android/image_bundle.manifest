@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 3825501477
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fee4cf69c91abd5f0960b51b28112a9e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/_Root/Sprites/Ui/icons/icon_07.png
+- Assets/_Root/Sprites/Ui/icons/icon_04.png
+- Assets/_Root/Sprites/Ui/icons/icon_09.png
+Dependencies: []
