@@ -17,6 +17,10 @@ MonoBehaviour:
     <Name>k__BackingField: Main Channel
     <Description>k__BackingField: It is the main channel!
     _importance: 4
+  - <Id>k__BackingField: notification_HW
+    <Name>k__BackingField: HW Channel
+    <Description>k__BackingField: It is the home work channel.
+    _importance: 3
   <Notifications>k__BackingField:
   - <Id>k__BackingField: notification_id
     <Title>k__BackingField: Game Notification
@@ -30,3 +34,15 @@ MonoBehaviour:
       <Minute>k__BackingField: 30
     <RepeatInterval>k__BackingField:
       <Seconds>k__BackingField: 30
+  - <Id>k__BackingField: notification_HW
+    <Title>k__BackingField: Game Notification for home work
+    <Text>k__BackingField: It is home work notification!
+    <RepeatType>k__BackingField: 1
+    <FireTime>k__BackingField:
+      <Year>k__BackingField: 2023
+      <Month>k__BackingField: 8
+      <Day>k__BackingField: 18
+      <Hour>k__BackingField: 23
+      <Minute>k__BackingField: 30
+    <RepeatInterval>k__BackingField:
+      <Seconds>k__BackingField: 10
